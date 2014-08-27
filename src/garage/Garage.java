@@ -17,13 +17,18 @@ public class Garage {
     public Garage()
     {
 
-        title = "*************************"+newLine;
-        title += "* Garage OpenClassrooms *"+newLine;
-        title += "*************************";
+
 
     }
 
     public String toString() {
+
+        title = "*************************"+newLine;
+        title += "* Garage OpenClassrooms *"+newLine;
+        title += "*************************";
+
+        System.out.println(title);
+
 
         try {
             ois = new ObjectInputStream(
@@ -45,11 +50,7 @@ public class Garage {
             e.printStackTrace();
         }
 
-//        title = "*************************"+newLine;
-//        title += "* Garage OpenClassrooms *"+newLine;
-//        title += "*************************";
-
-        return "ok";
+        return null;
     }
 
     public void add(Vehicule voit) {

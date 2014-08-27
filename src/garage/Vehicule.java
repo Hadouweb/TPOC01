@@ -1,6 +1,8 @@
 package garage;
 
 import java.io.Serializable;
+import java.util.Enumeration;
+import java.util.Hashtable;
 import java.util.List;
 
 /**
@@ -20,27 +22,35 @@ public class Vehicule implements Serializable {
 
     public String toString()
     {
-        String str = "+ Voiture "+this.nomMarque+" : "+this.nom;
+        String str = "+ Voiture "+this.nomMarque+" : "+this.nom+" Moteur "+this.moteur.type+" "+this.moteur.cylindre+" ("+this.moteur.prix+"€) ";
+        str += this.getOptions();
+
 
         return str;
     }
 
-    public void addOption(Option opt)
+    public void addOption(Option pOpt)
     {
+        Hashtable options = new Hashtable();
+        options.put(1, pOpt);
+
+        options = options.elements();
 
     }
 
     public Marque getMarque()
     {
-
-
         return null;
     }
 
     public List<Option> getOptions()
     {
+        Enumeration e = options.elements();
 
-        return null;
+        while(e.hasMoreElements())
+            System.out.println(e.nextElement());
+
+        return options;
     }
 
     public Double getPrix()

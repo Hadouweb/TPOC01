@@ -6,7 +6,13 @@ package garage;
 public class GPS implements Option {
 
     public Double getPrix() {
-
-        return null;
+        return 113.5d;
     }
+
+    public String toString(){
+        String str = "GPS ("+getPrix()+"€)";
+
+        return str;
+    }
+
 }

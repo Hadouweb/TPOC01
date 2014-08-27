@@ -5,9 +5,9 @@ package garage;
  */
 public class Moteur extends Vehicule{
 
-    private TypeMoteur type;
-    private String cylindre;
-    private Double prix;
+    protected TypeMoteur type;
+    protected String cylindre;
+    protected Double prix;
 
 
     public Moteur()
