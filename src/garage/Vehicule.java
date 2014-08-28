@@ -1,14 +1,12 @@
 package garage;
 
 import java.io.Serializable;
-import java.util.Enumeration;
-import java.util.Hashtable;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by kengo on 24/08/2014.
  */
-public class Vehicule implements Serializable {
+public class Vehicule implements Serializable, Option {
 
     private double prix;
     protected String nom;
@@ -23,18 +21,14 @@ public class Vehicule implements Serializable {
     public String toString()
     {
         String str = "+ Voiture "+this.nomMarque+" : "+this.nom+" Moteur "+this.moteur.type+" "+this.moteur.cylindre+" ("+this.moteur.prix+"€) ";
-        str += this.getOptions();
-
 
         return str;
     }
 
     public void addOption(Option pOpt)
     {
-        Hashtable options = new Hashtable();
-        options.put(1, pOpt);
-
-        options = options.elements();
+        this.options = new ArrayList();
+        options.add(pOpt);
 
     }
 
@@ -45,11 +39,6 @@ public class Vehicule implements Serializable {
 
     public List<Option> getOptions()
     {
-        Enumeration e = options.elements();
-
-        while(e.hasMoreElements())
-            System.out.println(e.nextElement());
-
         return options;
     }
 
