@@ -3,10 +3,7 @@ package garage;
 import java.io.Serializable;
 import java.util.*;
 
-/**
- * Created by kengo on 24/08/2014.
- */
-public class Vehicule implements Serializable, Option {
+public class Vehicule implements Serializable {
 
     private double prix;
     protected String nom;
@@ -21,30 +18,25 @@ public class Vehicule implements Serializable, Option {
     public String toString()
     {
         String str = "+ Voiture "+this.nomMarque+" : "+this.nom+" Moteur "+this.moteur.type+" "+this.moteur.cylindre+" ("+this.moteur.prix+"€) ";
+        str += this.options;
 
         return str;
     }
 
-    public void addOption(Option pOpt)
-    {
+    public void addOption(Option pOpt) {
         this.options = new ArrayList();
-        options.add(pOpt);
-
+        this.options.add(pOpt);
     }
 
-    public Marque getMarque()
-    {
+    public Marque getMarque() {
         return null;
     }
 
-    public List<Option> getOptions()
-    {
+    public List<Option> getOptions() {
         return options;
     }
 
-    public Double getPrix()
-    {
-
+    public Double getPrix() {
         return null;
     }
 
