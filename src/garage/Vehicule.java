@@ -15,21 +15,20 @@ public class Vehicule implements Serializable, Option {
     private MoteurEssence moteur;
 
     public Vehicule() {
-
+        this.options = new ArrayList();
     }
 
     public String toString()
     {
         String str = "+ Voiture "+this.nomMarque+" : "+this.nom+" Moteur "+this.moteur.type+" "+this.moteur.cylindre+" ("+this.moteur.prix+"€) ";
+        str += this.options + " d'une valeur totale de "+getPrix() + " €";
+
 
         return str;
     }
 
-    public void addOption(Option pOpt)
-    {
-        this.options = new ArrayList();
-        options.add(pOpt);
-
+    public void addOption(Option pOpt) {
+        this.options.add(pOpt);
     }
 
     public Marque getMarque()
@@ -42,10 +41,14 @@ public class Vehicule implements Serializable, Option {
         return options;
     }
 
-    public Double getPrix()
-    {
+    public Double getPrix() {
 
-        return null;
+        for(int i = 0; i < this.options.size(); i++) {
+            this.prix += this.options.get(i).getPrix();
+        }
+
+
+        return prix;
     }
 
 

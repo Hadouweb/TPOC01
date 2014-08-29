@@ -1,9 +1,8 @@
 package garage;
 
-/**
- * Created by kengo on 24/08/2014.
- */
-public interface Option {
+import java.io.Serializable;
+
+public interface Option extends Serializable{
 
     public Double getPrix();
 
