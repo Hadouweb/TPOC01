@@ -9,23 +9,34 @@ public class Garage {
     List<Vehicule> voitures;
     ObjectInputStream ois;
     ObjectOutputStream oos;
-    DataOutputStream dos;
-    String title;
     String newLine = System.getProperty("line.separator");
 
-    public Garage()
-    {
+    public Garage() {
+
+        BufferedReader br = null;
+        try {
+            br = new BufferedReader(new FileReader("voitures.txt"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        try {
+            if (br.readLine() == null) {
+                System.out.println("Aucune voiture sauvegardée !");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         this.voitures = new ArrayList();
     }
 
     public String toString() {
 
-        title = "*************************"+newLine;
+        String title = "*************************"+newLine;
         title += "* Garage OpenClassrooms *"+newLine;
         title += "*************************"+newLine;
 
         String str = title;
-
 
         try {
             ois = new ObjectInputStream(
@@ -55,8 +66,6 @@ public class Garage {
     }
 
     public void addVoiture(Vehicule voiture) {
-
-
 
         this.voitures.add(voiture);
 

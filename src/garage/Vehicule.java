@@ -7,8 +7,8 @@ public class Vehicule implements Serializable, Option {
 
     private double prix;
     protected String nom;
-    private List<Option> options;
     protected Marque nomMarque;
+    private List<Option> options;
     private Moteur moteur;
 
     public Vehicule() {
