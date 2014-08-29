@@ -9,21 +9,10 @@ public class Moteur extends Vehicule{
     protected String cylindre;
     protected Double prix;
 
-
-    public Moteur()
-    {
-
-    }
-
-    public void Moteur(String cylindre, Double prix)
-    {
-
-    }
-
     public void setMoteur(String pCylindre, Double pPrix)
     {
-        cylindre = pCylindre;
-        prix = pPrix;
+        this.cylindre = pCylindre;
+        this.prix = pPrix;
     }
 
 }

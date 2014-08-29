@@ -12,13 +12,13 @@ public class Main {
         lag1.addOption(new VitreElectrique());
         garage.addVoiture(lag1);
 
-//        Vehicule A300B_2 = new A300B();
-//        A300B_2.setMoteur(new MoteurElectrique("1500 W", 1234d));
-//        A300B_2.addOption(new Climatisation());
-//        A300B_2.addOption(new BarreDeToit());
-//        A300B_2.addOption(new SiegeChauffant());
-//        garage.addVoiture(A300B_2);
-//
+        Vehicule A300B_2 = new A300B();
+        A300B_2.setMoteur(new MoteurElectrique("1500 W", 1234d));
+        A300B_2.addOption(new Climatisation());
+        A300B_2.addOption(new BarreDeToit());
+        A300B_2.addOption(new SiegeChauffant());
+        garage.addVoiture(A300B_2);
+
 //        Vehicule d4_1 = new D4();
 //        d4_1.setMoteur(new MoteurDiesel("200 Hdi", 25684.80d));
 //        d4_1.addOption(new BarreDeToit());

@@ -1,6 +1,7 @@
 package garage;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,9 +17,7 @@ public class Garage {
 
     public Garage()
     {
-
-
-
+        this.voitures = new ArrayList();
     }
 
     public String toString() {
