@@ -4,9 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by kengo on 24/08/2014.
- */
+
 public class Garage {
     List<Vehicule> voitures;
     ObjectInputStream ois;
@@ -24,9 +22,9 @@ public class Garage {
 
         title = "*************************"+newLine;
         title += "* Garage OpenClassrooms *"+newLine;
-        title += "*************************";
+        title += "*************************"+newLine;
 
-        System.out.println(title);
+        String str = title;
 
 
         try {
@@ -36,7 +34,11 @@ public class Garage {
                         new File("voitures.txt"))));
 
             try {
-                System.out.println(ois.readObject().toString());
+                str += ois.readObject().toString()+newLine;
+                str += ois.readObject().toString()+newLine;
+                str += ois.readObject().toString()+newLine;
+                str += ois.readObject().toString()+newLine;
+                str += ois.readObject().toString()+newLine;
             }catch(ClassNotFoundException e) {
                 e.printStackTrace();
             }
@@ -49,14 +51,14 @@ public class Garage {
             e.printStackTrace();
         }
 
-        return null;
+        return str;
     }
 
-    public void add(Vehicule voit) {
+    public void addVoiture(Vehicule voiture) {
 
-    }
 
-    public void addVoiture(Vehicule lag1) {
+
+        this.voitures.add(voiture);
 
         try {
             oos = new ObjectOutputStream(
@@ -64,7 +66,10 @@ public class Garage {
                     new FileOutputStream(
                         new File("voitures.txt"))));
 
-            oos.writeObject(lag1);
+        for(int i = 0; i < this.voitures.size(); i++) {
+            oos.writeObject(this.voitures.get(i));
+        }
+
             oos.close();
 
         } catch (FileNotFoundException e) {
